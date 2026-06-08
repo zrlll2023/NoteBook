@@ -1,5 +1,5 @@
 #### MySQL配置
-```
+```xml
 <!-- MySQL依赖 -->  
 <dependency>  
     <groupId>com.mysql</groupId>  
@@ -8,7 +8,7 @@
 </dependency>
 ```
 然后在application.yml：
-```
+```yml
 spring:  
   datasource:  
     url: jdbc:mysql://127.0.0.1:3306/memosplus_db?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai  
@@ -18,7 +18,7 @@ spring:
 ```
 #### mybatis-plus配置
 springboot3.5.13开始就要用这个依赖了
-```
+```xml
 <!-- mybatis-plus依赖 -->  
 <dependency>  
     <groupId>com.baomidou</groupId>  
@@ -27,7 +27,7 @@ springboot3.5.13开始就要用这个依赖了
 </dependency>
 ```
 #### Redis配置
-```
+```xml
 <!-- Redis依赖 -->
 <dependency>
 	<groupId>org.springframework.boot</groupId>
@@ -35,7 +35,7 @@ springboot3.5.13开始就要用这个依赖了
 </dependency>
 ```
 然后在application.yml：
-```
+```yml
 spring:
   data:
     redis:
@@ -43,12 +43,12 @@ spring:
       port: 6379
 ```
 // properties 格式:
-```
+```properties
 spring.data.redis.host=127.0.0.1
 spring.data.redis.port=6379
 ```
 #### JWT配置
-```
+```xml
 <!-- JWT依赖 -->
 <dependency>
     <groupId>com.auth0</groupId>
@@ -57,7 +57,7 @@ spring.data.redis.port=6379
 </dependency>
 ```
 #### Knife4j配置
-```
+```xml
 <!-- Knife4j依赖 -->
 <dependency>
 	<groupId>com.github.xiaoymin</groupId>
@@ -66,10 +66,21 @@ spring.data.redis.port=6379
 </dependency>
 ```
 然后在application.yml：
-```
+```yml
 knife4j:
 	spring:
 		profile: dev 
 		open-api:
 		version: 3 
 ```
+#### 独立的 BCrypt 库
+```xml
+<!--    其实 BCrypt 不一定非要引入整个 Security，
+		所以可以引入独立的 BCrypt 库，不依赖 Spring Security          -->
+<dependency>  
+    <groupId>org.mindrot</groupId>  
+    <artifactId>jbcrypt</artifactId>  
+    <version>0.4</version>  
+</dependency>
+```
+
